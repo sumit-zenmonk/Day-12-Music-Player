@@ -63,7 +63,7 @@ export default function HeaderComp() {
                         paper: {
                             sx: {
                                 backgroundColor: "rgb(29, 29, 29)",
-                                color: "rgba(0, 162, 255, 0.98)",
+                                color: "rgba(255, 255, 255, 0.98)",
                                 fontWeight: "900",
                                 borderRadius: "20px",
                                 textAlign: "center"

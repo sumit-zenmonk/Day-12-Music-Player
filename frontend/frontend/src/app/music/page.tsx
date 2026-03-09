@@ -39,7 +39,12 @@ export default function MusicListComp() {
             setMusicListArray(musicData)
         }
         const newSearchFilter = musicData.filter((music: MusicMetaDataType) => music.title.includes(name))
-        setMusicListArray(newSearchFilter);
+        if (newSearchFilter && newSearchFilter.length) {
+            setMusicListArray(newSearchFilter);
+            enqueueSnackbar("filtered", { variant: "success" });
+        } else {
+            enqueueSnackbar("Didn't found similar", { variant: "warning" });
+        }
     }, [name])
 
     return (

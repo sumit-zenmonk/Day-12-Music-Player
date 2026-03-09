@@ -33,8 +33,8 @@ export default function ProfileComp() {
           </Avatar>
 
           <Box className={styles.infoRow}>
-            <span className={styles.label}>Email:</span>
-            <span className={styles.value}>{user.email}</span>
+            <span className={styles.label}>UID:</span>
+            <span className={styles.value}>{user.uid}</span>
           </Box>
 
           <Box className={styles.infoRow}>
@@ -43,8 +43,8 @@ export default function ProfileComp() {
           </Box>
 
           <Box className={styles.infoRow}>
-            <span className={styles.label}>UID:</span>
-            <span className={styles.value}>{user.uid}</span>
+            <span className={styles.label}>Email:</span>
+            <span className={styles.value}>{user.email}</span>
           </Box>
 
           <Button
