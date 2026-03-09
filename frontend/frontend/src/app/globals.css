@@ -1,0 +1,35 @@
+@import "tailwindcss";
+
+* {
+  scrollbar-width: none;
+  scroll-behavior: smooth;
+  transition: all ease .5s;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  font-weight: 900;
+  /* user-select: none; */
+  overflow: hidden;
+  background: linear-gradient(160deg, #020617, #575757, #020617);
+}
+
+button:hover,
+img:hover {
+  cursor: pointer;
+}
+
+
+.MuiInputBase-input {
+  color: rgb(255, 255, 255);
+}
+
+.MuiOutlinedInput-root .MuiOutlinedInput-notchedOutline,
+.MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline {
+  border-color: transparent;
+}
+
+.MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
+  border-color: transparent;
+}

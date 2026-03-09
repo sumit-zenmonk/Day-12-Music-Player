@@ -1,0 +1,113 @@
+.mainContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    color: white;
+}
+
+.playerCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    width: 35%;
+    height: 70%;
+    border-radius: 6%;
+    gap: 10%;
+    padding: 3%;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
+    animation-name: playerCardAnimation;
+    animation-duration: 2s;
+}
+
+.imageContainer {
+    width: 75%;
+    height: 55%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: bounce 2s infinite ease-in-out;
+}
+
+@keyframes bounce {
+    0% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+
+    50% {
+        transform: translateY(-5px) scale(1.1);
+        opacity: 0.3;
+    }
+
+    100% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+}
+
+.image {
+    width: 100%;
+    height: 100%;
+    border-radius: 6%;
+    object-fit: cover;
+}
+
+.infoContainer {
+    width: 90%;
+    height: 35%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.timeReport {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.title {
+    width: 100%;
+    text-align: center;
+    font-weight: 700;
+    letter-spacing: 2%;
+    color: rgb(99, 180, 255);
+}
+
+.slider {
+    width: 100%;
+    cursor: pointer;
+}
+
+.slider::-webkit-slider-thumb {
+    background: #22c55e;
+}
+
+.buttonContainer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5%;
+}
+
+.playButton {
+    margin-top: 6%;
+    width: 100%;
+    padding: 3%;
+    background-color: #292929;
+    color: white;
+    border-radius: 10px;
+    font-weight: 800;
+    box-shadow: inset 0 0 1px 1px white;
+}
+
+.playButton:hover {
+    letter-spacing: 1px;
+    background-color: #363636;
+    box-shadow: inset 0 0 1px 1px white;
+}

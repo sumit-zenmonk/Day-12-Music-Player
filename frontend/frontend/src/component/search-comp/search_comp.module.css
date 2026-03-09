@@ -1,0 +1,14 @@
+.search_box {
+    width: 40%;
+    display: flex;
+    color: rgb(255, 255, 255);
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 100px;
+    border: 2px solid white;
+    padding: 0 1%;
+}
+
+.search_box:focus {
+    border: 2px solid rgb(255, 0, 0);
+}
