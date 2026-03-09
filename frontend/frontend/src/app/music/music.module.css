@@ -46,7 +46,7 @@
     padding: 1.5% 1%;
     border-radius: 50px;
     border: 4px solid transparent;
-    background-color: #363636;
+    background-color: rgb(29, 29, 29);
     transition: background 0.2s ease;
     border: 2px solid transparent;
 }

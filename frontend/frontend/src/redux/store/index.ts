@@ -11,6 +11,7 @@ import searchMusicReducer from "../feature/search_music/searchMusicSlice";
 const persistConfig = {
     key: "root",
     storage,
+    blacklist: ['searchMusicReducer',],
 };
 
 const rootReducer = combineReducers({

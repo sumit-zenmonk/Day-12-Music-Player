@@ -19,8 +19,8 @@
 }
 
 .cardWrapper :global(.MuiAvatar-root) {
-  width: 22%;
-  height: 22%;
+  width: 100px;
+  height: 100px;
   margin-bottom: 6%;
   background-color: #334155;
 }

@@ -5,8 +5,8 @@
     /* justify-content: space-evenly; */
     align-items: center;
     padding: 0 1%;
-    box-shadow: 4px 4px 12px 20px rgba(0, 0, 0, 0.05);
-    background-color: rgb(0, 0, 0);
+    box-shadow: 4px 4px 12px 20px rgba(36, 36, 36, 0.05);
+    background-color: rgb(29, 29, 29);
 }
 
 .header>.left-container {

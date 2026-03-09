@@ -28,7 +28,7 @@ export default function SearchMusicComp() {
                 // label="Search Music"
                 placeholder="Search Music"
                 // variant="outlined"
-                value={name}
+                // value={name}
                 onKeyDown={(e) => e.key === 'Enter' && handleMusicSearch()}
                 onChange={(e) => setCurrMusic(e.target.value)}
             />

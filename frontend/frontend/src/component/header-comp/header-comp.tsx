@@ -62,9 +62,10 @@ export default function HeaderComp() {
                     slotProps={{
                         paper: {
                             sx: {
-                                backgroundColor: "#000000",
-                                color: "white",
+                                backgroundColor: "rgb(29, 29, 29)",
+                                color: "rgba(0, 162, 255, 0.98)",
                                 fontWeight: "900",
+                                borderRadius: "20px",
                                 textAlign: "center"
                             }
                         }
@@ -75,6 +76,14 @@ export default function HeaderComp() {
                             router.push('/');
                             handleMenuClose();
                         }}
+                        sx={{
+                            fontWeight: "700",
+                            border: "2px solid transparent",
+                            borderRadius: "20px",
+                            '&:hover': {
+                                border: "2px solid white"
+                            },
+                        }}
                     >
                         Home
                     </MenuItem>
@@ -84,13 +93,29 @@ export default function HeaderComp() {
                             router.push('/music');
                             handleMenuClose();
                         }}
+                        sx={{
+                            fontWeight: "700",
+                            border: "2px solid transparent",
+                            borderRadius: "20px",
+                            '&:hover': {
+                                border: "2px solid white"
+                            },
+                        }}
                     >
                         Music
                     </MenuItem>
 
                     {user ? (
                         <MenuItem
-                            sx={{ color: "red" }}
+                            sx={{
+                                color: "red",
+                                fontWeight: "700",
+                                border: "2px solid transparent",
+                                borderRadius: "20px",
+                                '&:hover': {
+                                    border: "2px solid white"
+                                },
+                            }}
                             onClick={async () => {
                                 await handleLogOut();
                                 handleMenuClose();
@@ -103,6 +128,14 @@ export default function HeaderComp() {
                             onClick={() => {
                                 router.push('/login');
                                 handleMenuClose();
+                            }}
+                            sx={{
+                                fontWeight: "700",
+                                border: "2px solid transparent",
+                                borderRadius: "20px",
+                                '&:hover': {
+                                    border: "2px solid white"
+                                },
                             }}
                         >
                             Sign In

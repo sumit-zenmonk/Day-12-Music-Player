@@ -17,6 +17,7 @@
     border-radius: 6%;
     gap: 10%;
     padding: 3%;
+    background-color: rgb(37, 37, 37);
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
     animation-name: playerCardAnimation;
     animation-duration: 2s;

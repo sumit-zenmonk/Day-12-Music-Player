@@ -28,7 +28,7 @@ export default function Page() {
     } = useSelector((state: RootState) => state.currMusicReducer)
     const musicData = useSelector((state: RootState) => state.allMusicReducer)
     const audioRef = useRef<HTMLAudioElement | null>(null);
-    const [isPlaying, setIsPlaying] = useState(true);
+    const [isPlaying, setIsPlaying] = useState(false);
     const [trackProgress, setTrackProgress] = useState(0);
     const [audioDuration, setAudioDuration] = useState(0);
     const dispatch = useDispatch<AppDispatch>();
