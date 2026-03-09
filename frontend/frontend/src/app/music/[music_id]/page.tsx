@@ -6,7 +6,7 @@ import { Box, Button, Divider, Typography } from "@mui/material";
 import { useDispatch, useSelector } from "react-redux";
 import styles from "./specific_music.module.css";
 import Image from "next/image";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import SkipNextIcon from '@mui/icons-material/SkipNext';
 import SkipPreviousIcon from '@mui/icons-material/SkipPrevious';
 import { enqueueSnackbar } from "notistack";
@@ -14,6 +14,8 @@ import ShuffleIcon from '@mui/icons-material/Shuffle';
 import { selectCurrMusic } from "@/redux/feature/curr_music/currMusicSlice";
 import { formatDuration, formatTime } from "@/utils/time";
 import { getRandomIndex } from "@/utils/random_num";
+import PlayCircleOutlineIcon from '@mui/icons-material/PlayCircleOutline';
+import PauseCircleOutlineIcon from '@mui/icons-material/PauseCircleOutline';
 
 export default function Page() {
     // const params = useParams();
@@ -51,6 +53,28 @@ export default function Page() {
         audioRef.current.currentTime = newTime;
         setTrackProgress(newTime);
     };
+
+    useEffect(() => {
+        if (!audioRef.current) return;
+
+        if (isPlaying) {
+            audioRef.current.play();
+        } else {
+            audioRef.current.pause();
+        }
+    }, [isPlaying]);
+
+    useEffect(() => {
+        const handleKeyDown = (event: KeyboardEvent) => {
+            if (event.code === 'Space') {
+                event.preventDefault();
+                setIsPlaying(prev => !prev);
+            }
+        };
+
+        document.addEventListener('keydown', handleKeyDown);
+        return () => document.removeEventListener('keydown', handleKeyDown);
+    }, []);
 
     const handleNavigation = (toggle: number) => {
         const total_tracks = musicData.length - 1;
@@ -122,7 +146,7 @@ export default function Page() {
                             className={styles.playButton}
                             onClick={togglePlayPause}
                         >
-                            {isPlaying ? "Pause" : "Play"}
+                            {isPlaying ? <PlayCircleOutlineIcon /> : <PauseCircleOutlineIcon />}
                         </Button>
                         <Button
                             className={styles.playButton}
