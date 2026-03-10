@@ -38,7 +38,7 @@ export default function MusicListComp() {
         if (name.trim()) {
             setMusicListArray(musicData)
         }
-        const newSearchFilter = musicData.filter((music: MusicMetaDataType) => music.title.includes(name))
+        const newSearchFilter = musicData.filter((music: MusicMetaDataType) => music.title.toLowerCase().includes(name.toLowerCase()))
         if (newSearchFilter && newSearchFilter.length) {
             setMusicListArray(newSearchFilter);
             enqueueSnackbar("filtered", { variant: "success" });
