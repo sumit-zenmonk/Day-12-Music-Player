@@ -1,13 +1,14 @@
 "use client"
 import { usePathname, useRouter } from 'next/navigation';
-import { Box, Button, Menu, MenuItem } from "@mui/material"
+import { Box, Button, Menu, MenuItem, Typography } from "@mui/material"
 import { logoutUser } from '@/redux/feature/Auth/authAction';
 import { AppDispatch, persistor, RootState } from '@/redux/store';
 import { useDispatch, useSelector } from 'react-redux';
 import './header-comp.css'
 import { useState } from "react";
-import MusicNoteIcon from '@mui/icons-material/MusicNote';
+import HomeFilledIcon from '@mui/icons-material/HomeFilled';
 import SearchMusicComp from '../search-comp/search_comp';
+import Image from 'next/image';
 
 export default function HeaderComp() {
     const pathname = usePathname();
@@ -35,21 +36,38 @@ export default function HeaderComp() {
 
     return (
         <header className="header">
-            <Box
-                className="left-container"
-            >
-                <MusicNoteIcon fontSize='large' className='logo'
-                    onClick={() => router.replace('/')} sx={{
-                        '&:hover': {
-                            cursor: "grab"
-                        },
-                    }} />
+            <Box className="left-container">
+                <Image
+                    src={'/logo.png'}
+                    className='logo'
+                    alt='logo img'
+                    width={40}
+                    height={40}
+                    onClick={() => router.replace('/')}
+                />
             </Box>
 
             <Box className="right-container">
+                <Box className="searchContainer" >
+                    <HomeFilledIcon fontSize='large' className='homeIcon' onClick={() => router.replace('/')} />
+                    <SearchMusicComp />
+                </Box>
+
+                <Box className="optionBox">
+                    <Box className="optionlist">
+                        <Typography className='option'>Premium </Typography>
+                        <Typography className='option'>Support </Typography>
+                        <Typography className='option'>Download </Typography>
+                    </Box>
+                    <Box className="optionlist">
+                        <Typography className='option'>Install App </Typography>
+                        <Typography className='option'>Sign Up </Typography>
+                    </Box>
+                </Box>
+
                 <Button
                     variant="outlined"
-                    sx={{ color: "white", borderColor: "white" }}
+                    sx={{ width: "10%", height: "10%", color: "black", backgroundColor: "white", fontWeight: "700", fontSize: "1rem", borderRadius: "16px" }}
                     onClick={handleMenuOpen}
                 >
                     Menu
@@ -62,6 +80,7 @@ export default function HeaderComp() {
                     slotProps={{
                         paper: {
                             sx: {
+                                width: "10%",
                                 backgroundColor: "rgb(29, 29, 29)",
                                 color: "rgba(255, 255, 255, 0.98)",
                                 fontWeight: "900",
@@ -90,7 +109,7 @@ export default function HeaderComp() {
 
                     <MenuItem
                         onClick={() => {
-                            router.push('/music');
+                            router.push('/profile');
                             handleMenuClose();
                         }}
                         sx={{
@@ -102,7 +121,7 @@ export default function HeaderComp() {
                             },
                         }}
                     >
-                        Music
+                        Profile
                     </MenuItem>
 
                     {user ? (

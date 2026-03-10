@@ -32,7 +32,9 @@
     "react-hook-form": "^7.71.2",
     "react-infinite-scroll-component": "^6.1.1",
     "react-redux": "^9.2.0",
+    "react-slick": "^0.31.0",
     "redux-persist": "^6.0.0",
+    "slick-carousel": "^1.8.1",
     "zod": "^4.3.6"
   },
   "devDependencies": {
@@ -41,6 +43,7 @@
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "@types/react-slick": "^0.23.13",
     "babel-plugin-react-compiler": "1.0.0",
     "eslint": "^9",
     "eslint-config-next": "16.1.6",

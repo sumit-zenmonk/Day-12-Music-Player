@@ -8,6 +8,8 @@ import FireBaseErrorWrapper from "@/component/firbase-error-layout/firebase-erro
 import { PersistGate } from "redux-persist/lib/integration/react";
 import { StyledEngineProvider } from "@mui/material";
 import HeaderComp from "@/component/header-comp/header-comp";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (

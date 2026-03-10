@@ -1,0 +1,235 @@
+.container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.content {
+    width: 100%;
+    height: 100%;
+    padding: 0 1%;
+    border-radius: 100%;
+}
+
+.header {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dialogfullScreen {
+    backdrop-filter: blur(5px);
+}
+
+.sliderBoxes {
+    width: 100%;
+    height: 100%;
+    overflow: scroll;
+    padding: 2%;
+    border-radius: 16px;
+    background-color: rgb(31, 31, 31);
+}
+
+.sliderBox {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    margin-bottom: 3%;
+}
+
+.sliderSeeMoreButton {
+    font-size: .7rem;
+    color: rgb(184, 184, 184);
+    font-weight: 700;
+    position: absolute;
+    right: 0;
+    top: 30;
+}
+
+.sliderSeeMoreButton:hover {
+    color: white;
+}
+
+.slidercomp {
+    width: 100%;
+    gap: 10%;
+    /* background-color: rgb(44, 44, 44); */
+    padding: 1%;
+    border-radius: 16px;
+}
+
+.contentHeading {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.title {
+    color: rgb(255, 255, 255);
+    font-size: 1rem;
+    font-weight: 700;
+    background-color: rgb(82, 82, 82);
+    padding: 1%;
+    border-radius: 20px;
+}
+
+.listContainer {
+    width: 100%;
+    height: 100%;
+}
+
+.listContainer::-webkit-scrollbar {
+    width: 0;
+}
+
+.songRow {
+    width: 30%;
+    margin: auto;
+    height: fit-content;
+    color: white;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10%;
+    border-radius: 16px;
+    transition: background 0.2s ease;
+}
+
+.songRow:hover {
+    background-color: rgb(61, 61, 61);
+}
+
+.artworkContainer {
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 1 / 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.artwork,
+.popularArtists {
+    width: 100%;
+    height: 100%;
+    border-radius: 6%;
+    /* border: 2px solid white; */
+    object-fit: cover;
+}
+
+.popularArtists {
+    border-radius: 100px;
+}
+
+.songInfo {
+    width: 55%;
+    height: 55%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.songTitle {
+    width: 95%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: .8rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+.songSource {
+    font-size: .5%rem
+}
+
+.duration {
+    width: 22%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    font-size: .9rem;
+}
+
+.clockIcon {
+    font-size: .9rem;
+    margin-right: 5%;
+}
+
+.slick-slide {
+    display: flex;
+    justify-content: center;
+}
+
+.slick-prev:before,
+.slick-next:before {
+    color: white;
+}
+
+.slick-dots li button:before {
+    color: white;
+}
+
+
+.listWrapper {
+    display: flex;
+    flex-direction: column;
+    padding: 4%;
+    gap: 8px;
+    background-color: #121212;
+    border: 1px solid white;
+    border-radius: 16px;
+    overflow: scroll;
+}
+
+.musicCard {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 2% 3%;
+    border-radius: 8px;
+    transition: all 0.2s ease-in-out;
+    background: transparent;
+}
+
+.musicCard:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.activeCard {
+    background: rgba(0, 195, 255, 0.15);
+    border: 1px solid #00c3ff;
+}
+
+.thumbBox {
+    flex: 0 0 12%;
+    display: flex;
+    align-items: center;
+}
+
+.thumbImg {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1 / 1;
+    border-radius: 4px;
+    object-fit: cover;
+}
+
+.contentBox {
+    flex: 1;
+    padding-left: 4%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.titleText {
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 1rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

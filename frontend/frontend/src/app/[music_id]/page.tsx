@@ -16,6 +16,7 @@ import { formatDuration, formatTime } from "@/utils/time";
 import { getRandomIndex } from "@/utils/random_num";
 import PlayCircleOutlineIcon from '@mui/icons-material/PlayCircleOutline';
 import PauseCircleOutlineIcon from '@mui/icons-material/PauseCircleOutline';
+import HeaderComp from "@/component/header-comp/header-comp";
 
 export default function Page() {
     // const params = useParams();
@@ -100,68 +101,71 @@ export default function Page() {
 
     return (
         <Box className={styles.mainContainer}>
-            <audio
-                ref={audioRef}
-                src={localAudio}
-                preload="auto"
-                onLoadedMetadata={(e) => setAudioDuration(e.currentTarget.duration)}
-                onTimeUpdate={(e) => setTrackProgress(e.currentTarget.currentTime)}
-                onEnded={() => handleNavigation(musicFlow)}
-                autoPlay
-            />
-            <Box className={styles.playerCard}>
-                <Box className={styles.imageContainer}>
-                    <Image
-                        src={localArt}
-                        alt="music art"
-                        width={100}
-                        height={100}
-                        className={styles.image}
-                    />
-                </Box>
-                <Box className={styles.infoContainer}>
-                    <Typography className={styles.title}>{title}</Typography>
-
-                    <Box className={styles.timeReport}>
-                        <Typography > {formatTime(trackProgress)}</Typography>
-                        <Typography>{formatDuration(duration)}</Typography>
+            <HeaderComp />
+            <Box className={styles.content}>
+                <audio
+                    ref={audioRef}
+                    src={localAudio}
+                    preload="auto"
+                    onLoadedMetadata={(e) => setAudioDuration(e.currentTarget.duration)}
+                    onTimeUpdate={(e) => setTrackProgress(e.currentTarget.currentTime)}
+                    onEnded={() => handleNavigation(musicFlow)}
+                    autoPlay
+                />
+                <Box className={styles.playerCard}>
+                    <Box className={styles.imageContainer}>
+                        <Image
+                            src={localArt}
+                            alt="music art"
+                            width={100}
+                            height={100}
+                            className={styles.image}
+                        />
                     </Box>
+                    <Box className={styles.infoContainer}>
+                        <Typography className={styles.title}>{title}</Typography>
 
-                    <input
-                        className={styles.slider}
-                        type="range"
-                        value={trackProgress}
-                        min={0}
-                        max={audioDuration || duration || 0}
-                        onChange={handleProgressChange}
-                    />
-                    <Box className={styles.buttonContainer}>
+                        <Box className={styles.timeReport}>
+                            <Typography > {formatTime(trackProgress)}</Typography>
+                            <Typography>{formatDuration(duration)}</Typography>
+                        </Box>
+
+                        <input
+                            className={styles.slider}
+                            type="range"
+                            value={trackProgress}
+                            min={0}
+                            max={audioDuration || duration || 0}
+                            onChange={handleProgressChange}
+                        />
+                        <Box className={styles.buttonContainer}>
+                            <Button
+                                className={styles.playButton}
+                                onClick={() => handleNavigation(0)}
+                            >
+                                <SkipPreviousIcon />
+                            </Button>
+                            <Button
+                                className={styles.playButton}
+                                onClick={togglePlayPause}
+                            >
+                                {isPlaying ? <PauseCircleOutlineIcon /> : <PlayCircleOutlineIcon />}
+                            </Button>
+                            <Button
+                                className={styles.playButton}
+                                onClick={() => handleNavigation(1)}
+                            >
+                                <SkipNextIcon />
+                            </Button>
+                        </Box>
+
                         <Button
                             className={styles.playButton}
-                            onClick={() => handleNavigation(0)}
+                            onClick={() => handleNavigation(2)}
                         >
-                            <SkipPreviousIcon />
-                        </Button>
-                        <Button
-                            className={styles.playButton}
-                            onClick={togglePlayPause}
-                        >
-                            {isPlaying ? <PauseCircleOutlineIcon /> : <PlayCircleOutlineIcon />}
-                        </Button>
-                        <Button
-                            className={styles.playButton}
-                            onClick={() => handleNavigation(1)}
-                        >
-                            <SkipNextIcon />
+                            <ShuffleIcon />
                         </Button>
                     </Box>
-
-                    <Button
-                        className={styles.playButton}
-                        onClick={() => handleNavigation(2)}
-                    >
-                        <ShuffleIcon />
-                    </Button>
                 </Box>
             </Box>
         </Box>

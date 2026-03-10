@@ -1,35 +1,17 @@
 .search_box {
-    width: 40%;
+    width: 90%;
     display: flex;
-    color: rgb(255, 255, 255);
+    color: rgb(167, 167, 167);
     justify-content: space-between;
     align-items: center;
     border-radius: 100px;
-    border: 2px solid white;
+    /* border: 2px solid white; */
     /* padding: 0 1%; */
-    padding-left: 1%;
+    padding-left: 2%;
+    padding-right: 2%;
+    background-color: rgb(43, 43, 43);
 }
 
 .search_box:focus {
     border: 2px solid rgb(255, 0, 0);
-}
-
-.SelectMenu {
-    color: white;
-    background-color: rgb(29, 29, 29);
-    border-radius: 100px;
-}
-
-.MenuItem {
-    font-weight: 700;
-    border: 2px solid rgb(130, 236, 255);
-    border-radius: 20px;
-    margin-bottom: 8px;
-    color: white;
-    justify-content: center;
-}
-
-.MenuItem:hover {
-    background-color: rgb(130, 236, 255);
-    color: black;
 }
