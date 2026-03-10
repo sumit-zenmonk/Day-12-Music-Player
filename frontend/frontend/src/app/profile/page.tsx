@@ -25,7 +25,6 @@ export default function ProfileComp() {
 
     return (
         <Box className={styles.container}>
-            <HeaderComp />
             <Box className={styles.Contentlayer}>
                 {user ? (
                     <Box className={styles.cardWrapper}>
