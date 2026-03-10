@@ -146,7 +146,7 @@ export default function Page() {
                             className={styles.playButton}
                             onClick={togglePlayPause}
                         >
-                            {isPlaying ? <PlayCircleOutlineIcon /> : <PauseCircleOutlineIcon />}
+                            {isPlaying ? <PauseCircleOutlineIcon /> : <PlayCircleOutlineIcon />}
                         </Button>
                         <Button
                             className={styles.playButton}
