@@ -32,10 +32,10 @@ export default function ProfileComp() {
             {!user.photo && <PersonOutlineOutlinedIcon />}
           </Avatar>
 
-          <Box className={styles.infoRow}>
+          {/* <Box className={styles.infoRow}>
             <span className={styles.label}>UID:</span>
             <span className={styles.value}>{user.uid}</span>
-          </Box>
+          </Box> */}
 
           <Box className={styles.infoRow}>
             <span className={styles.label}>Name:</span>

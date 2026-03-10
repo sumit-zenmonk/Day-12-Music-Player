@@ -31,6 +31,15 @@ export default function SearchMusicComp() {
                 // value={name}
                 onKeyDown={(e) => e.key === 'Enter' && handleMusicSearch()}
                 onChange={(e) => setCurrMusic(e.target.value)}
+                sx={{
+                    "& .MuiOutlinedInput-notchedOutline": { border: "none" },
+                    "& .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline": {
+                        border: "none",
+                    },
+                    "& .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline": {
+                        border: "none",
+                    },
+                }}
             />
             <Select
                 labelId="category_lableId"

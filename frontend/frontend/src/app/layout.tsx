@@ -18,7 +18,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <PersistGate loading={null} persistor={persistor}>
               <SnackbarProvider maxSnack={5} autoHideDuration={3000}>
                 <FireBaseErrorWrapper>
-                  <HeaderComp />
                   {children}
                 </FireBaseErrorWrapper>
               </SnackbarProvider>

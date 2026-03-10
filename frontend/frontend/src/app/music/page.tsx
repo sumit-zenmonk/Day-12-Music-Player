@@ -35,14 +35,17 @@ export default function MusicListComp() {
     };
 
     useEffect(() => {
-        if (name.trim()) {
+        if (!name.trim()) {
             setMusicListArray(musicData)
+            return;
         }
+
         const newSearchFilter = musicData.filter((music: MusicMetaDataType) => music.title.toLowerCase().includes(name.toLowerCase()))
         if (newSearchFilter && newSearchFilter.length) {
             setMusicListArray(newSearchFilter);
-            enqueueSnackbar("filtered", { variant: "success" });
+            enqueueSnackbar("tracks loaded", { variant: "success" });
         } else {
+            setMusicListArray(musicData)
             enqueueSnackbar("Didn't found similar", { variant: "warning" });
         }
     }, [name])

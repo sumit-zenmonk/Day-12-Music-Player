@@ -7,9 +7,26 @@
 .formWrapper {
     display: flex;
     flex-direction: column;
-    width: 40%;
+    background-color: transparent;
+    color: white;
+    width: 25%;
     padding: 4%;
+    gap: 1% 0;
     border-radius: 100px;
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.title {
+    font-size: 2rem;
+    font-weight: 900;
+    text-align: center;
+    margin-bottom: 6%;
 }
 
 .title {
@@ -37,11 +54,60 @@
 }
 
 .button {
-    margin-top: 4%;
     width: 100%;
+    margin-top: 3%;
+    border-radius: 100px;
+    background-color: rgb(45, 226, 0);
+    color: black;
+    font-weight: 700;
 }
 
-.loginBtn {
-    margin-top: 3%;
+.button:hover {
+    background-color: rgb(39, 185, 3);
+}
+
+.anchorbutton {
+    color: white;
+    font-weight: 600;
+    border-radius: 100px;
+    box-shadow: 0 0 1px 1px rgb(0, 0, 0);
+    transition: all ease .5s;
+}
+
+.anchorbutton:hover {
+    transform: scale(1.2);
+}
+
+.loginBox {
+    margin-top: 8%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.haveAcc {
+    color: white;
+    font-weight: 400;
+}
+
+
+.divider {
+    margin: 6% 0;
+}
+
+.providerLoginBox {
     width: 100%;
+    margin-top: 3%;
+    border-radius: 100px;
+    background-color: rgb(255, 255, 255);
+    color: black;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5%;
+    padding: 2%;
+    text-transform: none;
 }

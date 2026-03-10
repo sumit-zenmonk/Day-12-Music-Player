@@ -9,6 +9,7 @@ import { loginSchema, LoginSchemaType } from "@/types/login"
 import { googleLogin, loginUser } from "@/redux/feature/Auth/authAction"
 import { useRouter } from "next/navigation"
 import GoogleIcon from '@mui/icons-material/Google';
+import MusicNoteIcon from '@mui/icons-material/MusicNote';
 
 import {
     Box,
@@ -18,6 +19,7 @@ import {
     Typography,
     Divider
 } from "@mui/material"
+import Image from "next/image"
 
 export default function LoginForm() {
     const dispatch = useDispatch<AppDispatch>()
@@ -52,9 +54,17 @@ export default function LoginForm() {
     return (
         <Box className={styles.container}>
             <Card className={styles.formWrapper} elevation={3}>
-                <Typography variant="h5" className={styles.title}>
-                    Login
-                </Typography>
+                <Box className={styles.header}>
+                    <MusicNoteIcon fontSize='large' className='logo'
+                        onClick={() => router.replace('/')} sx={{
+                            '&:hover': {
+                                cursor: "grab"
+                            },
+                        }} />
+                    <Typography variant="h5" className={styles.title}>
+                        Welcome Back
+                    </Typography>
+                </Box>
 
                 <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
                     <Box className={styles.field}>
@@ -63,6 +73,15 @@ export default function LoginForm() {
                             type="email"
                             fullWidth
                             {...register("email")}
+                            slotProps={{
+                                inputLabel: { sx: { color: 'white', '&.Mui-focused': { color: 'white' } } },
+                                input: {
+                                    sx: {
+                                        color: 'white',
+                                        '& input::placeholder': { color: 'white', opacity: 1 },
+                                    },
+                                },
+                            }}
                         />
                         {errors.email && (
                             <span className={styles.error}>
@@ -77,6 +96,15 @@ export default function LoginForm() {
                             type="password"
                             fullWidth
                             {...register("password")}
+                            slotProps={{
+                                inputLabel: { sx: { color: 'white', '&.Mui-focused': { color: 'white' } } },
+                                input: {
+                                    sx: {
+                                        color: 'white',
+                                        '& input::placeholder': { color: 'white', opacity: 1 },
+                                    },
+                                },
+                            }}
                         />
                         {errors.password && (
                             <span className={styles.error}>
@@ -88,7 +116,7 @@ export default function LoginForm() {
                     <Button
                         variant="contained"
                         type="submit"
-                        className={styles.button}
+                        className={styles.loginbutton}
                     >
                         Login
                     </Button>
@@ -98,22 +126,65 @@ export default function LoginForm() {
 
                 <Button
                     variant="outlined"
-                    className={styles.button}
+                    className={styles.providerLoginBox}
                     onClick={handleGoogleLogin}
                 >
-                    <GoogleIcon />
+                    {/* <GoogleIcon /> */}
+                    <Image
+                        src={'/google.png'}
+                        alt="google icon"
+                        width={25}
+                        height={25}
+                    />
                     <Typography>
                         Login with Google
                     </Typography>
                 </Button>
 
                 <Button
-                    variant="text"
-                    className={styles.button}
-                    onClick={() => router.replace("/signup")}
+                    variant="outlined"
+                    className={styles.providerLoginBox}
+                    onClick={handleGoogleLogin}
                 >
-                    Create New Account?
+                    {/* <GoogleIcon /> */}
+                    <Image
+                        src={'/microsoft.png'}
+                        alt="google icon"
+                        width={25}
+                        height={25}
+                    />
+                    <Typography>
+                        Login with microsoft
+                    </Typography>
                 </Button>
+
+                <Button
+                    variant="outlined"
+                    className={styles.providerLoginBox}
+                    onClick={handleGoogleLogin}
+                >
+                    {/* <GoogleIcon /> */}
+                    <Image
+                        src={'/github.png'}
+                        alt="google icon"
+                        width={25}
+                        height={25}
+                    />
+                    <Typography>
+                        Login with github
+                    </Typography>
+                </Button>
+
+                <Box className={styles.signupBox}>
+                    <Typography className={styles.noAcc}>Don't have Account ?</Typography>
+                    <Button
+                        variant="text"
+                        className={styles.anchorbutton}
+                        onClick={() => router.replace("/signup")}
+                    >
+                        Sign Up
+                    </Button>
+                </Box>
             </Card>
         </Box>
     )
