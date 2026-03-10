@@ -15,6 +15,7 @@ import {
     Button,
     Card,
     Divider,
+    InputLabel,
     TextField,
     Typography
 } from "@mui/material"
@@ -65,8 +66,12 @@ export default function SignupForm() {
 
                 <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
                     <Box className={styles.field}>
+                        <InputLabel htmlFor="email" sx={{ color: "white", fontWeight: 600, fontSize: ".8rem" }}>
+                            Email
+                        </InputLabel>
                         <TextField
-                            label="Email"
+                            id="email"
+                            // label="Email"
                             type="email"
                             fullWidth
                             {...register("email")}
@@ -74,6 +79,7 @@ export default function SignupForm() {
                                 inputLabel: { sx: { color: 'white', '&.Mui-focused': { color: 'white' } } },
                                 input: {
                                     sx: {
+                                        height:"40px",
                                         color: 'white',
                                         '& input::placeholder': { color: 'white', opacity: 1 },
                                     },
@@ -88,8 +94,12 @@ export default function SignupForm() {
                     </Box>
 
                     <Box className={styles.field}>
+                        <InputLabel htmlFor="password" sx={{ color: "white", fontWeight: 600, fontSize: ".8rem" }}>
+                            Password
+                        </InputLabel>
                         <TextField
-                            label="Password"
+                            id="password"
+                            // label="Password"
                             type="password"
                             fullWidth
                             {...register("password")}
@@ -97,6 +107,7 @@ export default function SignupForm() {
                                 inputLabel: { sx: { color: 'white', '&.Mui-focused': { color: 'white' } } },
                                 input: {
                                     sx: {
+                                        height:"40px",
                                         color: 'white',
                                         '& input::placeholder': { color: 'white', opacity: 1 },
                                     },
@@ -111,8 +122,12 @@ export default function SignupForm() {
                     </Box>
 
                     <Box className={styles.field}>
+                        <InputLabel htmlFor="confirmpassword" sx={{ color: "white", fontWeight: 600, fontSize: ".8rem" }}>
+                            Confirm Password
+                        </InputLabel>
                         <TextField
-                            label="Confirm Password"
+                            id="confirmpassword"
+                            // label="Confirm Password"
                             type="password"
                             fullWidth
                             {...register("confirmPassword")}
@@ -120,6 +135,7 @@ export default function SignupForm() {
                                 inputLabel: { sx: { color: 'white', '&.Mui-focused': { color: 'white' } } },
                                 input: {
                                     sx: {
+                                        height:"40px",
                                         color: 'white',
                                         '& input::placeholder': { color: 'white', opacity: 1 },
                                     },
@@ -161,40 +177,6 @@ export default function SignupForm() {
                         </Typography>
                     </Button>
 
-                    <Button
-                        variant="outlined"
-                        className={styles.providerLoginBox}
-                        onClick={handleGoogleLogin}
-                    >
-                        {/* <GoogleIcon /> */}
-                        <Image
-                            src={'/microsoft.png'}
-                            alt="google icon"
-                            width={25}
-                            height={25}
-                        />
-                        <Typography>
-                            Login with microsoft
-                        </Typography>
-                    </Button>
-
-                    <Button
-                        variant="outlined"
-                        className={styles.providerLoginBox}
-                        onClick={handleGoogleLogin}
-                    >
-                        {/* <GoogleIcon /> */}
-                        <Image
-                            src={'/github.png'}
-                            alt="google icon"
-                            width={25}
-                            height={25}
-                        />
-                        <Typography>
-                            Login with github
-                        </Typography>
-                    </Button>
-
                     <Box className={styles.loginBox}>
                         <Typography className={styles.haveAcc}>Already have Account ?</Typography>
                         <Button
@@ -207,6 +189,10 @@ export default function SignupForm() {
                     </Box>
                 </form>
             </Card>
+
+            <Typography className={styles.privacyContent}>
+                This site is protected by reCAPTCHA and the Google Privacy Policy and Terms of Service apply.
+            </Typography>
         </Box>
     )
 }

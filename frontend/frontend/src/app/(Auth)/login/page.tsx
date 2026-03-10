@@ -17,7 +17,8 @@ import {
     Card,
     TextField,
     Typography,
-    Divider
+    Divider,
+    InputLabel
 } from "@mui/material"
 import Image from "next/image"
 
@@ -53,14 +54,16 @@ export default function LoginForm() {
 
     return (
         <Box className={styles.container}>
-            <Card className={styles.formWrapper} elevation={3}>
+            <Card className={styles.formWrapper} elevation={4}>
                 <Box className={styles.header}>
-                    <MusicNoteIcon fontSize='large' className='logo'
-                        onClick={() => router.replace('/')} sx={{
-                            '&:hover': {
-                                cursor: "grab"
-                            },
-                        }} />
+                    <Box >
+                        <MusicNoteIcon fontSize='large' className='logo'
+                            onClick={() => router.replace('/')} sx={{
+                                '&:hover': {
+                                    cursor: "grab"
+                                },
+                            }} />
+                    </Box>
                     <Typography variant="h5" className={styles.title}>
                         Welcome Back
                     </Typography>
@@ -68,8 +71,12 @@ export default function LoginForm() {
 
                 <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
                     <Box className={styles.field}>
+                        <InputLabel htmlFor="email" sx={{ color: "white", fontWeight: 600, fontSize: ".8rem" }}>
+                            Email
+                        </InputLabel>
                         <TextField
-                            label="Email"
+                            id="email"
+                            // label="Email"
                             type="email"
                             fullWidth
                             {...register("email")}
@@ -77,6 +84,7 @@ export default function LoginForm() {
                                 inputLabel: { sx: { color: 'white', '&.Mui-focused': { color: 'white' } } },
                                 input: {
                                     sx: {
+                                        height:"40px",
                                         color: 'white',
                                         '& input::placeholder': { color: 'white', opacity: 1 },
                                     },
@@ -91,8 +99,12 @@ export default function LoginForm() {
                     </Box>
 
                     <Box className={styles.field}>
+                        <InputLabel htmlFor="password" sx={{ color: "white", fontWeight: 600, fontSize: ".8rem" }}>
+                            Password
+                        </InputLabel>
                         <TextField
-                            label="Password"
+                            id="password"
+                            // label="Password"
                             type="password"
                             fullWidth
                             {...register("password")}
@@ -100,6 +112,7 @@ export default function LoginForm() {
                                 inputLabel: { sx: { color: 'white', '&.Mui-focused': { color: 'white' } } },
                                 input: {
                                     sx: {
+                                        height:"40px",
                                         color: 'white',
                                         '& input::placeholder': { color: 'white', opacity: 1 },
                                     },
@@ -163,13 +176,15 @@ export default function LoginForm() {
                     className={styles.providerLoginBox}
                     onClick={handleGoogleLogin}
                 >
-                    {/* <GoogleIcon /> */}
-                    <Image
-                        src={'/github.png'}
-                        alt="google icon"
-                        width={25}
-                        height={25}
-                    />
+                    <Box>
+                        {/* <GoogleIcon /> */}
+                        <Image
+                            src={'/github.png'}
+                            alt="google icon"
+                            width={25}
+                            height={25}
+                        />
+                    </Box>
                     <Typography>
                         Login with github
                     </Typography>
@@ -186,6 +201,10 @@ export default function LoginForm() {
                     </Button>
                 </Box>
             </Card>
+
+            <Typography className={styles.privacyContent}>
+                This site is protected by reCAPTCHA and the Google Privacy Policy and Terms of Service apply.
+            </Typography>
         </Box>
     )
 }
