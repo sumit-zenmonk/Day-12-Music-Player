@@ -124,18 +124,19 @@
 }
 
 .songInfo {
-    width: 55%;
-    height: 55%;
+    width: 100%;
+    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    word-break: break-all;
 }
 
 .songTitle {
-    width: 95%;
+    width: 100%;
+    height: 55%;
     overflow: hidden;
     text-overflow: ellipsis;
-    white-space: nowrap;
     font-size: .8rem;
     font-weight: 600;
     text-align: center;

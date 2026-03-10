@@ -195,7 +195,7 @@ export default function MusicListComp() {
 
           <Box className={styles.sliderBox}>
             <Typography sx={{ color: "white" }} className={styles.contentHeading}>
-              Trending Songs
+              Follow Songs
             </Typography>
 
             <Slider {...sliderSettings} className={styles.slidercomp}>
@@ -233,7 +233,7 @@ export default function MusicListComp() {
 
           <Box className={styles.sliderBox}>
             <Typography sx={{ color: "white" }} className={styles.contentHeading}>
-              Popular Artists
+              Join New Artists
             </Typography>
 
             <Slider {...sliderSettings} className={styles.slidercomp}>

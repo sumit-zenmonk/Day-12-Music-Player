@@ -8,6 +8,7 @@ import './header-comp.css'
 import { useState } from "react";
 import HomeFilledIcon from '@mui/icons-material/HomeFilled';
 import SearchMusicComp from '../search-comp/search_comp';
+import FileDownloadIcon from '@mui/icons-material/FileDownload';
 import Image from 'next/image';
 
 export default function HeaderComp() {
@@ -60,7 +61,7 @@ export default function HeaderComp() {
                         <Typography className='option'>Download </Typography>
                     </Box>
                     <Box className="optionlist">
-                        <Typography className='option'>Install App </Typography>
+                        <Typography className='option'>Install App <FileDownloadIcon /></Typography>
                         <Typography className='option'>Sign Up </Typography>
                     </Box>
                 </Box>
