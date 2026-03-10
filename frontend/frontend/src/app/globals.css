@@ -15,6 +15,7 @@ body {
   overflow: hidden;
   /* background: linear-gradient(160deg, #020617, #575757, #020617); */
   background-color: rgb(15, 15, 15);
+  padding-top: 100px;
 }
 
 button:hover,

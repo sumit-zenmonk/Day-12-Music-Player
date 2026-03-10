@@ -36,7 +36,7 @@ export default function HeaderComp() {
     };
 
     return (
-        <header className="header">
+        <Box className="header">
             <Box className="left-container">
                 <Image
                     src={'/logo.png'}
@@ -86,7 +86,7 @@ export default function HeaderComp() {
                                 color: "rgba(255, 255, 255, 0.98)",
                                 fontWeight: "900",
                                 borderRadius: "20px",
-                                textAlign: "center"
+                                textAlign: "center",
                             }
                         }
                     }}
@@ -163,6 +163,6 @@ export default function HeaderComp() {
                     )}
                 </Menu>
             </Box>
-        </header >
+        </Box >
     )
 }

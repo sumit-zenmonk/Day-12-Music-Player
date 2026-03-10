@@ -19,6 +19,7 @@ import Image from "next/image";
 import { ApiCallService } from "../../services/http";
 import CloseIcon from '@mui/icons-material/Close';
 import LaunchIcon from '@mui/icons-material/Launch';
+import FooterComp from "@/component/footer-comp/footer";
 
 export default function MusicListComp() {
   const router = useRouter();
@@ -258,6 +259,7 @@ export default function MusicListComp() {
           </Box>
 
         </Box>
+        <FooterComp />
       </Box>
     </Box>
   );
